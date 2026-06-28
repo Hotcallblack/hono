@@ -3,6 +3,13 @@ import { RegExpRouter } from '../../src/router/reg-exp-router/index.ts'
 
 const app = new Hono({ router: new RegExpRouter() })
 
+// Serve the HTML page with Vercel Analytics at the root
+app.get('/', async (c) => {
+  const html = await Deno.readTextFile('./index.html')
+  return c.html(html)
+})
+
+// API routes for benchmarking
 app.get('/user', (c) => c.text('User'))
 app.get('/user/comments', (c) => c.text('User Comments'))
 app.get('/user/avatar', (c) => c.text('User Avatar'))
