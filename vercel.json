@@ -1,0 +1,108 @@
+{
+  "id": 18216821,
+  "name": "vercel",
+  "target": "branch",
+  "source_type": "Repository",
+  "source": "Hotcallblack/hono",
+  "enforcement": "evaluate",
+  "conditions": {
+    "ref_name": {
+      "exclude": [],
+      "include": []
+    }
+  },
+  "rules": [
+    {
+      "type": "creation"
+    },
+    {
+      "type": "required_deployments",
+      "parameters": {
+        "required_deployment_environments": [
+          "Production"
+        ]
+      }
+    },
+    {
+      "type": "merge_queue",
+      "parameters": {
+        "merge_method": "MERGE",
+        "max_entries_to_build": 5,
+        "min_entries_to_merge": 1,
+        "max_entries_to_merge": 5,
+        "min_entries_to_merge_wait_minutes": 5,
+        "grouping_strategy": "ALLGREEN",
+        "check_response_timeout_minutes": 60
+      }
+    },
+    {
+      "type": "required_signatures"
+    },
+    {
+      "type": "non_fast_forward"
+    },
+    {
+      "type": "code_quality",
+      "parameters": {
+        "severity": "all"
+      }
+    }
+  ],
+  "bypass_actors": [
+    {
+      "actor_id": null,
+      "actor_type": "DeployKey",
+      "bypass_mode": "always"
+    },
+    {
+      "actor_id": null,
+      "actor_type": "OrganizationAdmin",
+      "bypass_mode": "always"
+    },
+    {
+      "actor_id": null,
+      "actor_type": "EnterpriseOwner",
+      "bypass_mode": "always"
+    },
+    {
+      "actor_id": 2,
+      "actor_type": "RepositoryRole",
+      "bypass_mode": "always"
+    },
+    {
+      "actor_id": 4,
+      "actor_type": "RepositoryRole",
+      "bypass_mode": "always"
+    },
+    {
+      "actor_id": 5,
+      "actor_type": "RepositoryRole",
+      "bypass_mode": "always"
+    },
+    {
+      "actor_id": 8329,
+      "actor_type": "Integration",
+      "bypass_mode": "always"
+    },
+    {
+      "actor_id": 17343,
+      "actor_type": "EnterpriseRole",
+      "bypass_mode": "always"
+    },
+    {
+      "actor_id": 38493,
+      "actor_type": "EnterpriseRole",
+      "bypass_mode": "always"
+    },
+    {
+      "actor_id": 82848,
+      "actor_type": "EnterpriseRole",
+      "bypass_mode": "always"
+    },
+    {
+      "actor_id": 18130300,
+      "actor_type": "Team",
+      "bypass_mode": "always"
+    }
+  ]
+}
