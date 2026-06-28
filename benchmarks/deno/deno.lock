@@ -1,0 +1,7 @@
+{
+  "version": "5",
+  "remote": {
+    "https://esm.sh/@vercel/analytics@1.1.1": "8a02259252efd7b423f23a3a07818a3a56f96cf3b5fa616144ca45534dfaba03",
+    "https://esm.sh/@vercel/analytics@1.1.1/denonext/analytics.mjs": "fabf4976365b313399f40b74bac13f5f4eae2a86399575c56b01c26124c47400"
+  }
+}
