@@ -1,0 +1,12 @@
+{
+  "name": "hono-deno-benchmarks",
+  "version": "1.0.0",
+  "description": "Deno benchmarks for Hono with Vercel Speed Insights",
+  "type": "module",
+  "scripts": {
+    "dev": "deno run --allow-net --allow-read hono.ts"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.1.0"
+  }
+}
