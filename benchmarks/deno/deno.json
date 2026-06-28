@@ -1,6 +1,7 @@
 {
   "imports": {
-    "@vercel/analytics": "https://esm.sh/@vercel/analytics@1.1.1"
+    "@vercel/analytics": "https://esm.sh/@vercel/analytics@1.1.1",
+    "@vercel/speed-insights": "https://esm.sh/@vercel/speed-insights@1.0.12"
   },
   "compilerOptions": {
     "lib": ["deno.window", "dom", "dom.iterable"]

@@ -27,10 +27,10 @@ app.get('/', (c) => {
         </style>
       </head>
       <body>
-        <h1>Hono + Vercel Analytics Demo</h1>
+        <h1>Hono + Vercel Analytics & Speed Insights Demo</h1>
         <div class="info">
-          <p>This page demonstrates Vercel Web Analytics integration with Hono on Deno.</p>
-          <p>Analytics tracking is enabled via the inject script below.</p>
+          <p>This page demonstrates Vercel Web Analytics and Speed Insights integration with Hono on Deno.</p>
+          <p>Analytics tracking and performance monitoring are enabled via the inject scripts below.</p>
         </div>
         <h2>Available API Routes:</h2>
         <ul>
@@ -46,6 +46,13 @@ app.get('/', (c) => {
           // Import and inject Vercel Analytics
           import { inject } from 'https://esm.sh/@vercel/analytics@1.1.1';
           inject({ mode: 'development' });
+        </script>
+        
+        <!-- Vercel Speed Insights -->
+        <script type="module">
+          // Import and inject Vercel Speed Insights
+          import { injectSpeedInsights } from 'https://esm.sh/@vercel/speed-insights@1.0.12';
+          injectSpeedInsights();
         </script>
       </body>
     </html>
