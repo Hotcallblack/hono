@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hono Deno Benchmarks - Vercel Analytics Demo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .container {
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 800px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+    
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+    }
+    
+    .badge {
+      display: inline-block;
+      background: #10b981;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    
+    p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .api-list {
+      background: #f7fafc;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    
+    .api-list h2 {
+      color: #333;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+    
+    .api-endpoint {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      margin: 8px 0;
+      background: white;
+      border-radius: 6px;
+      transition: transform 0.2s;
+    }
+    
+    .api-endpoint:hover {
+      transform: translateX(5px);
+    }
+    
+    .method {
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-right: 12px;
+      font-size: 0.75rem;
+    }
+    
+    .method-get {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+    
+    .method-post {
+      background: #fef3c7;
+      color: #92400e;
+    }
+    
+    .path {
+      color: #4b5563;
+      font-family: 'Courier New', monospace;
+      font-size: 0.875rem;
+    }
+    
+    .analytics-info {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      padding: 16px;
+      border-radius: 4px;
+      margin-top: 20px;
+    }
+    
+    .analytics-info h3 {
+      color: #1e40af;
+      margin-bottom: 8px;
+    }
+    
+    .analytics-info p {
+      color: #1e40af;
+      margin: 0;
+    }
+    
+    a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔥 Hono Deno Benchmarks</h1>
+    <span class="badge">✓ Vercel Analytics Enabled</span>
+    
+    <p>
+      This is a demonstration page for the Hono Deno benchmarks project with 
+      <strong>Vercel Web Analytics</strong> integration. The analytics script tracks 
+      page views and user interactions in real-time.
+    </p>
+    
+    <div class="api-list">
+      <h2>Available API Endpoints</h2>
+      
+      <div class="api-endpoint">
+        <span class="method method-get">GET</span>
+        <span class="path">/user</span>
+      </div>
+      
+      <div class="api-endpoint">
+        <span class="method method-get">GET</span>
+        <span class="path">/user/comments</span>
+      </div>
+      
+      <div class="api-endpoint">
+        <span class="method method-get">GET</span>
+        <span class="path">/user/avatar</span>
+      </div>
+      
+      <div class="api-endpoint">
+        <span class="method method-get">GET</span>
+        <span class="path">/user/lookup/email/:address</span>
+      </div>
+      
+      <div class="api-endpoint">
+        <span class="method method-get">GET</span>
+        <span class="path">/event/:id</span>
+      </div>
+      
+      <div class="api-endpoint">
+        <span class="method method-get">GET</span>
+        <span class="path">/event/:id/comments</span>
+      </div>
+      
+      <div class="api-endpoint">
+        <span class="method method-post">POST</span>
+        <span class="path">/event/:id/comments</span>
+      </div>
+      
+      <div class="api-endpoint">
+        <span class="method method-post">POST</span>
+        <span class="path">/status</span>
+      </div>
+      
+      <div class="api-endpoint">
+        <span class="method method-get">GET</span>
+        <span class="path">/very/deeply/nested/route/hello/there</span>
+      </div>
+      
+      <div class="api-endpoint">
+        <span class="method method-get">GET</span>
+        <span class="path">/user/lookup/username/:username</span>
+      </div>
+    </div>
+    
+    <div class="analytics-info">
+      <h3>📊 Vercel Analytics</h3>
+      <p>
+        This page is instrumented with Vercel Web Analytics. Once deployed to Vercel, 
+        you can view real-time traffic insights, page performance metrics, and user 
+        behavior analytics in your Vercel dashboard.
+      </p>
+    </div>
+    
+    <p style="margin-top: 20px; text-align: center; font-size: 0.875rem;">
+      Powered by <a href="https://hono.dev" target="_blank">Hono</a> • 
+      Analytics by <a href="https://vercel.com/analytics" target="_blank">Vercel</a>
+    </p>
+  </div>
+  
+  <!-- Vercel Web Analytics Script -->
+  <script>
+    window.va = window.va || function () { 
+      (window.vaq = window.vaq || []).push(arguments); 
+    };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "npm:react"
+  },
+  "imports": {
+    "@vercel/analytics": "npm:@vercel/analytics@^1.4.1"
+  },
+  "nodeModulesDir": "auto",
+  "tasks": {
+    "dev": "deno run --allow-net --allow-read --allow-env hono.ts",
+    "install": "deno install --allow-scripts=npm:esbuild"
+  }
+}

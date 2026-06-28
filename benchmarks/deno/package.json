@@ -1,0 +1,9 @@
+{
+  "name": "hono-deno-benchmarks",
+  "version": "1.0.0",
+  "description": "Hono Deno benchmarks with Vercel Web Analytics",
+  "type": "module",
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  }
+}
